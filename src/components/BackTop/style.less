@@ -1,0 +1,26 @@
+.tt-backtop {
+    position       : fixed;
+    right          : 40px;
+    bottom         : 400px;
+    height         : 86px;
+    width          : 86px;
+    border-radius  : 43px;
+    pointer-events : none;
+    opacity        : 0;
+    transition     : 0.3s;
+    background     : rgba(211, 176, 122,.8);
+    box-shadow     : 4px 4px 8px 2px rgba(210, 211, 216, 0.8), -4px -4px 8px 2px rgba(255, 255, 255, 0.8);
+    font-size      : 24px;
+    font-family    : PingFangSC-Semibold, PingFang SC;
+    font-weight    : 600;
+    color          : #fff;
+    display        : flex;
+    justify-content: center;
+    align-items    : center;
+
+
+    &.active {
+        opacity       : 1;
+        pointer-events: initial
+    }
+}

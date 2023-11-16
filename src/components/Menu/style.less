@@ -1,0 +1,37 @@
+.tt-menu {
+  background-color: #fff;
+  border-radius: 16px;
+  overflow: hidden;
+
+  .tt-menu-item {
+    width: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 32px;
+    box-sizing: border-box;
+    font-size: 24px;
+    color: #121d3a;
+    font-family: PingFangSC-Regular;
+    transition: 0.15s;
+
+    &:active {
+      background-color: rgba(0, 0, 0, 0.08);
+    }
+
+    &::after {
+      position: absolute;
+      left: 32px;
+      bottom: 0;
+      content: '';
+      width: calc(100% - 64px);
+      height: 1px;
+      transform: scaleY(0.5);
+      background-color: #dddddd;
+    }
+
+    &:last-child::after {
+      display: none;
+    }
+  }
+}

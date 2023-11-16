@@ -1,0 +1,30 @@
+.list__tab {
+  height: 84px;
+
+  .at-tabs__item {
+    font-size: 28px;
+    height: 84px;
+    line-height: 84px;
+    padding: 0 32px;
+    color: #545968;
+    font-weight: 400;
+    flex: none;
+    box-sizing: border-box;
+  }
+
+  .at-tabs__item-underline {
+    bottom: 2px;
+  }
+
+  .at-tabs__item--active {
+    color: #1338b3;
+    font-weight: 500;
+    .at-tabs__item-underline {
+      left: 50%;
+      margin-left: -18px;
+      width: 36px;
+      height: 4px;
+      background-color: #1338b3;
+    }
+  }
+}

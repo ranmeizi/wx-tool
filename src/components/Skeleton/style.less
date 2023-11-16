@@ -1,0 +1,39 @@
+.skeleton-item {
+  background: linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 0.06) 25%,
+    rgba(0, 0, 0, 0.15) 37%,
+    rgba(0, 0, 0, 0.06) 63%
+  );
+  background-size: 400% 100%;
+  width: 100%;
+  animation: skeleton 1.4s infinite ease-in;
+  border-radius: 8px;
+
+  &.sm {
+    height: 32px;
+  }
+
+  &.md {
+    height: 48px;
+  }
+
+  &.lg {
+    height: 64px;
+  }
+
+  &.skeleton-avatar {
+    height: 80px;
+    width: 80px;
+    border-radius: 40px;
+  }
+}
+
+@keyframes skeleton {
+  from {
+    background-position: 100% 50%;
+  }
+  to {
+    background-position: 0% 50%;
+  }
+}
