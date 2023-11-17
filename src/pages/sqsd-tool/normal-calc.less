@@ -1,0 +1,84 @@
+.normal-calc-root {
+  background-color: #f0f1f4;
+  .normal-calc-view {
+    padding: 32px;
+  }
+
+  .info {
+    font-size: 22px;
+    margin-bottom: 24px;
+  }
+
+  .range-input {
+    input {
+      padding: 8px 24px;
+      background-color: #f0f1f4;
+      border-radius: 12px;
+      width: 120px;
+    }
+  }
+
+  .float-view {
+    padding: 24px 32px;
+    background-color: #fff;
+
+    .btn {
+      height: 88px;
+      line-height: 88px;
+      font-size: 28px;
+      border-radius: 8px;
+      background-color: transparent;
+      flex: 1;
+      margin-right: 14px;
+      transition: 300ms;
+
+      &:active {
+        opacity: 0.6;
+      }
+
+      &.disabled {
+        pointer-events: none;
+        opacity: 0.6;
+      }
+
+      &:last-child {
+        margin-right: 0;
+      }
+
+      &::after {
+        display: none;
+      }
+
+      &.primary {
+        color: #fff;
+        background-color: #1338b3;
+      }
+
+      &.ghost {
+        color: #1338b3;
+        border: 1px solid #1338b3;
+      }
+    }
+  }
+
+  .error {
+    .tt-title {
+      animation: errorblink 0.4s 3 alternate forwards;
+    }
+
+    .tt-input {
+      animation: errorblink 0.4s 3 alternate forwards;
+    }
+  }
+
+  @keyframes errorblink {
+    from {
+      border-color: #333333;
+      color: #333333;
+    }
+    to {
+      border-color: #ff3333;
+      color: #ff3333;
+    }
+  }
+}

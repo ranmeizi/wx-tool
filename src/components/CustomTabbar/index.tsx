@@ -6,8 +6,8 @@ import './style.less';
 import SafeArea from '../SafeArea';
 
 // tabbar 文字颜色
-const selectedColor = '#D3B07A';
-const color = '#999999';
+const selectedColor = '#1338B3';
+const color = '#8a8a8a';
 
 type CustomTabbarProps = {
   coverView?: boolean;

@@ -1,5 +1,9 @@
 export default defineAppConfig({
-  pages: ['pages/home/index', 'pages/mine/index'],
+  pages: [
+    'pages/tool/index',
+    'pages/about/index',
+    'pages/sqsd-tool/normal-calc',
+  ],
   subPackages: [
     {
       root: 'subPackage',
@@ -29,16 +33,16 @@ export default defineAppConfig({
     backgroundColor: 'white',
     list: [
       {
-        pagePath: 'pages/home/index',
-        text: '首页',
-        iconPath: './assets/tabbar-icons/buy-sell-signal.png',
-        selectedIconPath: './assets/tabbar-icons/buy-sell-signal-select.png',
+        pagePath: 'pages/tool/index',
+        text: '工具',
+        iconPath: './assets/tabbar-icons/tool.png',
+        selectedIconPath: './assets/tabbar-icons/tool-select.png',
       },
       {
-        pagePath: 'pages/mine/index',
-        text: '我的',
-        iconPath: './assets/tabbar-icons/personal.png',
-        selectedIconPath: './assets/tabbar-icons/personal-select.png',
+        pagePath: 'pages/about/index',
+        text: '关于',
+        iconPath: './assets/tabbar-icons/about.png',
+        selectedIconPath: './assets/tabbar-icons/about-select.png',
       },
     ],
   },
