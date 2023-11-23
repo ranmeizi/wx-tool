@@ -11,7 +11,6 @@ import React, {
   useImperativeHandle,
   useRef,
 } from 'react';
-import LoginModal, { LoginModalRef, OpenOptions } from './LoginModal';
 
 export const context = React.createContext<{
   fixedViewRender: (node: FixedNodeMap) => null;
@@ -41,9 +40,6 @@ const Page = forwardRef(
 
     // 用户信息
     const { token } = useContext(AppContext);
-
-    // 隐私控制器
-    const loginModalContrl = useRef<LoginModalRef>(null);
 
     const { bottom } = useConstant(() => {
       const { safeArea, screenHeight } = Taro.getSystemInfoSync();
@@ -78,18 +74,9 @@ const Page = forwardRef(
       return null;
     }
 
-    /** 登陆弹窗打开 */
-    function openLoginModal({ success }: OpenOptions) {
-      loginModalContrl.current?.open({
-        success: success,
-      });
-    }
-
     /** 检查登陆 */
     function checkLogin(successFn) {
-      return token
-        ? successFn && successFn()
-        : openLoginModal({ success: successFn });
+      return token ? successFn && successFn() : console.log('todo');
     }
 
     return (
@@ -103,7 +90,6 @@ const Page = forwardRef(
           ...style,
         }}
       >
-        <LoginModal ref={loginModalContrl} />
         <context.Provider
           value={{
             fixedViewRender,

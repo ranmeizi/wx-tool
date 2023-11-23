@@ -25,7 +25,7 @@ const INITIAL_VALUES = {
 export default function () {
   const [probability, setProbability] = useState<number>();
   const [price, setPrice] = useState<number>();
-  const [cost, setCost] = useState<[number, number]>();
+  const [cost, setCost] = useState<number>();
 
   function onSubmit({ expect, ...growths }) {
     // 计算总成长
@@ -58,13 +58,7 @@ export default function () {
   }
 
   function calcCost() {
-    const optimisticTimes = Math.floor(1 / probability!);
-    const pessimisticTimes = Math.ceil(1 / probability!);
-
-    setCost([
-      Math.round(optimisticTimes * price!),
-      Math.round(pessimisticTimes * price!),
-    ]);
+    setCost(Math.round((1 / probability!) * price!));
   }
 
   console.log('price', price);
@@ -97,9 +91,7 @@ export default function () {
                   </View>
                   <View>
                     花费：
-                    {cost
-                      ? `乐观：${cost[0]} 金币，悲观：${cost[1]} 金币`
-                      : '--'}
+                    {cost ? `${cost} 金币` : '--'}
                   </View>
                 </Menu.Item>
               </Menu>
@@ -230,10 +222,10 @@ function InputRange({
   ...inputProps
 }: InputRangeProps & FieldInputProps<[number, number]>) {
   function onMinChange(e) {
-    onChange([e.detail.value, value[1]]);
+    onChange([Number(e.detail.value), value[1]]);
   }
   function onMaxChange(e) {
-    onChange([value[0], e.detail.value]);
+    onChange([value[0], Number(e.detail.value)]);
   }
   return (
     <View className={`range-input f-r a-center ${error ? 'error' : ''}`}>

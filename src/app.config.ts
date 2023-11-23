@@ -3,12 +3,12 @@ export default defineAppConfig({
     'pages/tool/index',
     'pages/about/index',
     'pages/sqsd-tool/normal-calc',
+    'pages/sqsd-tool/states-calc',
   ],
   subPackages: [
     {
       root: 'subPackage',
       pages: [
-        'pages/form-example/index',
         'pages/example/index', // 示例列表
         'pages/example/pulldown/index', // 下拉刷新 view
         'pages/example/pulldown/deep-refresher', // 下拉组件的深层隔代组件刷新

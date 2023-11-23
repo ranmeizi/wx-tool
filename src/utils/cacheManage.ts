@@ -62,23 +62,3 @@ class CacheManage<T> {
 }
 
 export default CacheManage;
-
-// 下面写需要缓存的变量对象
-
-/** 缓存 code */
-export const wxCodeCache = new CacheManage<string>({
-  name: 'wx-jscode',
-  expireDuration: 1000 * 60 * 5, // jscode 有效期5分钟，需要在调用任何使用code的api后清空cache
-  newDataFunc() {
-    return new Promise((resolve, reject) => {
-      Taro.login({
-        success(res) {
-          resolve(res.code);
-        },
-        fail(res) {
-          reject(res);
-        },
-      });
-    });
-  },
-});
