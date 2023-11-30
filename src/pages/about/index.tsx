@@ -1,7 +1,6 @@
 import CustomTabbar from '@/components/CustomTabbar';
 import Page from '@/components/Page';
 import { Button, View } from '@tarojs/components';
-import React from 'react';
 import './style.less';
 
 /** 用于埋点的 pageId (必须) */

@@ -16,12 +16,12 @@ const toolList = [
     desc: '使用宠物成长值，计算对应成长捕捉概率',
     path: '/pages/sqsd-tool/normal-calc',
   },
-  {
-    icon: IMG_SQSD,
-    title: '素质点数计算器',
-    desc: '素质点数计算器',
-    path: '/pages/sqsd-tool/states-calc',
-  },
+  // {
+  //   icon: IMG_SQSD,
+  //   title: '素质点数计算器',
+  //   desc: '素质点数计算器',
+  //   path: '/pages/sqsd-tool/states-calc',
+  // },
 ];
 
 definePageConfig({
