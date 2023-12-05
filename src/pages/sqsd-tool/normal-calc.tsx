@@ -45,7 +45,6 @@ export default function () {
   const [probability, setProbability] = useState<number>();
   const [price, setPrice] = useState<number>();
   const [cost, setCost] = useState<number>();
-  const [name, setName] = useState<string>('邦奇诺');
   const [modalCtrl, modal] = useModal();
   const formRef = useRef<any>();
 
@@ -106,8 +105,7 @@ export default function () {
           icon: 'none',
         });
 
-        setName(res.data.name);
-        changeForm(res.data);
+        changeForm(res.data.data);
       });
     } catch (e) {
       Taro.showToast({
@@ -229,9 +227,6 @@ export default function () {
                 </View>
                 <Menu>
                   <Menu.Item>
-                    <View style={{ marginBottom: '24rpx' }}>
-                      宠物名称:&nbsp;&nbsp;&nbsp;{name || '未知'}
-                    </View>
                     <View className="full-width f-r j-between">
                       <Field name="expect" validate={required('期望成长')}>
                         {({ input, meta }) => (
